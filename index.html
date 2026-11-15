@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sérgio Borges | Portfólio de Aplicativos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #131a2a;
+      --surface-hover: #192236;
+      --border: #232f47;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #10b981;
+      --badge-bg: rgba(59, 130, 246, 0.14);
+      --badge-text: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header / Hero */
+    header {
+      padding: 72px 0 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.14), transparent 65%);
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .stack-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stack-badge {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Filter Bar */
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0 32px;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--text);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Grid & Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      background: var(--surface-hover);
+    }
+
+    .card.hidden {
+      display: none;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .category-tag {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      transition: background-color 0.2s ease;
+    }
+
+    .card-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--badge-text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="tag-pill">
+        <span class="dot"></span>
+        7 Aplicações em Produção
+      </div>
+      <h1>Sérgio Borges</h1>
+      <p class="subtitle">
+        Transformo ideias em aplicativos reais e funcionais. Soluções digitais desenvolvidas para resolver problemas práticos de empresas, produtores, cidadãos e gestão pública.
+      </p>
+      <div class="stack-badges">
+        <span class="stack-badge">⚡ Hospedagem Vercel</span>
+        <span class="stack-badge">🗄️ Banco de Dados Neon</span>
+        <span class="stack-badge">🤖 Inteligência Artificial</span>
+        <span class="stack-badge">🔒 Código Proprietário</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todos (7)</button>
+      <button class="filter-btn" data-filter="agro">Agro & Ambiental</button>
+      <button class="filter-btn" data-filter="publico">Cidades & Gestão Pública</button>
+      <button class="filter-btn" data-filter="negocios">Negócios & Comunidade</button>
+    </div>
+
+    <div class="grid" id="apps-grid">
+      <!-- 1. Radar Editais Startups -->
+      <article class="card" data-category="negocios">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🚀</div>
+            <span class="category-tag">Negócios & Inovação</span>
+          </div>
+          <h2>Radar Editais Startups</h2>
+          <p>Monitoramento e descoberta inteligente de editais, fomento e oportunidades de financiamento para startups e projetos inovadores.</p>
+        </div>
+        <a href="https://radar-editais-startups.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+
+      <!-- 2. VirouTroca -->
+      <article class="card" data-category="negocios">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">📚</div>
+            <span class="category-tag">Comunidade</span>
+          </div>
+          <h2>VirouTroca</h2>
+          <p>Plataforma para troca e negociação prática de livros usados entre leitores, incentivando a leitura e a economia circular.</p>
+        </div>
+        <a href="https://viroutroca.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+
+      <!-- 3. Táxi JF Connect -->
+      <article class="card" data-category="publico">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🚖</div>
+            <span class="category-tag">Mobilidade Urbana</span>
+          </div>
+          <h2>Táxi JF Connect</h2>
+          <p>Solução para gestão do serviço de táxi pelos municípios, promovendo conexão rápida e inteligente entre passageiros e taxistas.</p>
+        </div>
+        <a href="https://taxi-jf-connect.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+
+      <!-- 4. Gestão Academia -->
+      <article class="card" data-category="negocios">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">💪</div>
+            <span class="category-tag">Gestão & Saúde</span>
+          </div>
+          <h2>Gestão Academia</h2>
+          <p>Sistema completo para controle de alunos, acompanhamento de treinos e organização das rotinas operacionais de academias.</p>
+        </div>
+        <a href="https://academia.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+
+      <!-- 5. Reserva Legal -->
+      <article class="card" data-category="agro">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🌿</div>
+            <span class="category-tag">Ambiental & Agro</span>
+          </div>
+          <h2>Reserva Legal</h2>
+          <p>Conecta proprietários rurais com déficit de matas a detentores de ativos florestais, formando um banco para negociação de compensação de Reserva Legal.</p>
+        </div>
+        <a href="https://reserva-legal.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+
+      <!-- 6. Memória Digital -->
+      <article class="card" data-category="publico">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🏛️</div>
+            <span class="category-tag">Gestão Pública</span>
+          </div>
+          <h2>Memória Digital</h2>
+          <p>Preservação, organização e acesso seguro a registros históricos. Ideal para prefeituras e instituições em processo de digitalização e catalogação de acervos públicos.</p>
+        </div>
+        <a href="https://mem-ria-digital.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+
+      <!-- 7. Radar Gado -->
+      <article class="card" data-category="agro">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🐂</div>
+            <span class="category-tag">Agronegócio</span>
+          </div>
+          <h2>Radar Gado</h2>
+          <p>Monitoramento, controle de rebanho e inteligência de dados para apoiar decisões na gestão pecuária.</p>
+        </div>
+        <a href="https://radar-gado.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Acessar Aplicação ↗
+        </a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Desenvolvido por <strong>Sérgio Borges</strong> • Veja também o perfil no <a href="https://github.com/sergioborgesinfo-byte" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
