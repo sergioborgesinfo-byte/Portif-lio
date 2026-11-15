@@ -261,6 +261,14 @@
       background: var(--primary-hover);
     }
 
+    .card-btn.coming-soon {
+      background: rgba(148, 163, 184, 0.1);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      cursor: default;
+      pointer-events: none;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
@@ -287,7 +295,7 @@
     <div class="container">
       <div class="tag-pill">
         <span class="dot"></span>
-        7 Aplicações em Produção
+        7 Aplicações Desenvolvidas
       </div>
       <h1>Sérgio Borges</h1>
       <p class="subtitle">
@@ -325,7 +333,7 @@
             <h2>Radar Editais Startups</h2>
             <p>Monitoramento e descoberta inteligente de editais, fomento e oportunidades de financiamento para startups e projetos inovadores.</p>
           </div>
-          <a href="https://radar-editais-startups.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          <a href="https://radareditaisstartups-docs.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-btn">
             Acessar Aplicação ↗
           </a>
         </div>
@@ -345,33 +353,13 @@
             <h2>VirouTroca</h2>
             <p>Plataforma para troca e negociação prática de livros usados entre leitores, incentivando a leitura e a economia circular.</p>
           </div>
-          <a href="https://viroutroca.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          <a href="https://viroutroca.com.br" target="_blank" rel="noopener noreferrer" class="card-btn">
             Acessar Aplicação ↗
           </a>
         </div>
       </article>
 
-      <!-- 3. Táxi BR -->
-      <article class="card" data-category="publico">
-        <div class="preview-box">
-          <img src="./taxi-br.png" alt="Preview Táxi BR" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div>
-            <div class="card-header">
-              <div class="icon-box">🚖</div>
-              <span class="category-tag">Mobilidade Urbana</span>
-            </div>
-            <h2>Táxi BR</h2>
-            <p>Solução para gestão do serviço de táxi pelos municípios, promovendo conexão rápida e inteligente entre passageiros e taxistas.</p>
-          </div>
-          <a href="https://taxi-jf-connect.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-            Acessar Aplicação ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- 4. Brachium -->
+      <!-- 3. Brachium -->
       <article class="card" data-category="negocios">
         <div class="preview-box">
           <img src="./Bhachium.png" alt="Preview Brachium" loading="lazy">
@@ -385,33 +373,13 @@
             <h2>Brachium</h2>
             <p>Sistema completo para controle de alunos, acompanhamento de treinos e organização das rotinas operacionais de academias.</p>
           </div>
-          <a href="https://academia.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          <a href="https://academia-nine-pied.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-btn">
             Acessar Aplicação ↗
           </a>
         </div>
       </article>
 
-      <!-- 5. Reserva Legal -->
-      <article class="card" data-category="agro">
-        <div class="preview-box">
-          <img src="./Reseva%20Legal.png" alt="Preview Reserva Legal" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div>
-            <div class="card-header">
-              <div class="icon-box">🌿</div>
-              <span class="category-tag">Ambiental & Agro</span>
-            </div>
-            <h2>Reserva Legal</h2>
-            <p>Conecta proprietários rurais com déficit de matas a detentores de ativos florestais, formando um banco para negociação de compensação de Reserva Legal.</p>
-          </div>
-          <a href="https://reserva-legal.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-            Acessar Aplicação ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- 6. Memória Digital -->
+      <!-- 4. Memória Digital -->
       <article class="card" data-category="publico">
         <div class="preview-box">
           <img src="./memoria-digital.png" alt="Preview Memória Digital" loading="lazy">
@@ -425,9 +393,49 @@
             <h2>Memória Digital</h2>
             <p>Preservação, organização e acesso seguro a registros históricos. Ideal para prefeituras e instituições em processo de digitalização e catalogação de acervos públicos.</p>
           </div>
-          <a href="https://mem-ria-digital.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+          <a href="https://memoria-digital-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-btn">
             Acessar Aplicação ↗
           </a>
+        </div>
+      </article>
+
+      <!-- 5. Táxi BR -->
+      <article class="card" data-category="publico">
+        <div class="preview-box">
+          <img src="./taxi-br.png" alt="Preview Táxi BR" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🚖</div>
+              <span class="category-tag">Mobilidade Urbana</span>
+            </div>
+            <h2>Táxi BR</h2>
+            <p>Solução para gestão do serviço de táxi pelos municípios, promovendo conexão rápida e inteligente entre passageiros e taxistas.</p>
+          </div>
+          <span class="card-btn coming-soon">
+            ⏳ Em implantação (Em breve)
+          </span>
+        </div>
+      </article>
+
+      <!-- 6. Reserva Legal -->
+      <article class="card" data-category="agro">
+        <div class="preview-box">
+          <img src="./Reseva%20Legal.png" alt="Preview Reserva Legal" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🌿</div>
+              <span class="category-tag">Ambiental & Agro</span>
+            </div>
+            <h2>Reserva Legal</h2>
+            <p>Conecta proprietários rurais com déficit de matas a detentores de ativos florestais, formando um banco para negociação de compensação de Reserva Legal.</p>
+          </div>
+          <span class="card-btn coming-soon">
+            ⏳ Em implantação (Em breve)
+          </span>
         </div>
       </article>
 
@@ -445,9 +453,9 @@
             <h2>Radar Gado</h2>
             <p>Plataforma para produtores cadastrarem lotes de animais bovinos à venda, bem como compradores buscarem animais para compra. Busca valores da @ diariamente, o proprietário recebe propostas, a plataforma avalia a melhor oferta (anonimizada) e aconselha sobre a venda.</p>
           </div>
-          <a href="https://radar-gado.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-            Acessar Aplicação ↗
-          </a>
+          <span class="card-btn coming-soon">
+            ⏳ Em implantação (Em breve)
+          </span>
         </div>
       </article>
     </div>
