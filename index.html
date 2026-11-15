@@ -141,7 +141,7 @@
     /* Grid & Cards */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
       gap: 24px;
       margin-bottom: 64px;
     }
@@ -150,7 +150,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -167,23 +167,53 @@
       display: none;
     }
 
+    .preview-box {
+      width: 100%;
+      height: 195px;
+      background-color: #080b12;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.35s ease;
+      display: block;
+    }
+
+    .card:hover .preview-box img {
+      transform: scale(1.04);
+    }
+
+    .card-body {
+      padding: 24px 26px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
     .card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       background: rgba(59, 130, 246, 0.12);
       border: 1px solid rgba(59, 130, 246, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
     .category-tag {
@@ -206,7 +236,7 @@
 
     .card p {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       margin-bottom: 24px;
       flex-grow: 1;
     }
@@ -283,107 +313,142 @@
     <div class="grid" id="apps-grid">
       <!-- 1. Radar Editais Startups -->
       <article class="card" data-category="negocios">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">🚀</div>
-            <span class="category-tag">Negócios & Inovação</span>
-          </div>
-          <h2>Radar Editais Startups</h2>
-          <p>Monitoramento e descoberta inteligente de editais, fomento e oportunidades de financiamento para startups e projetos inovadores.</p>
+        <div class="preview-box">
+          <img src="./Radar Editais Startups.png" alt="Preview Radar Editais Startups" loading="lazy">
         </div>
-        <a href="https://radar-editais-startups.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🚀</div>
+              <span class="category-tag">Negócios & Inovação</span>
+            </div>
+            <h2>Radar Editais Startups</h2>
+            <p>Monitoramento e descoberta inteligente de editais, fomento e oportunidades de financiamento para startups e projetos inovadores.</p>
+          </div>
+          <a href="https://radar-editais-startups.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
 
       <!-- 2. VirouTroca -->
       <article class="card" data-category="negocios">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">📚</div>
-            <span class="category-tag">Comunidade</span>
-          </div>
-          <h2>VirouTroca</h2>
-          <p>Plataforma para troca e negociação prática de livros usados entre leitores, incentivando a leitura e a economia circular.</p>
+        <div class="preview-box">
+          <img src="./VirouTroca.png" alt="Preview VirouTroca" loading="lazy">
         </div>
-        <a href="https://viroutroca.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">📚</div>
+              <span class="category-tag">Comunidade</span>
+            </div>
+            <h2>VirouTroca</h2>
+            <p>Plataforma para troca e negociação prática de livros usados entre leitores, incentivando a leitura e a economia circular.</p>
+          </div>
+          <a href="https://viroutroca.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
 
       <!-- 3. Táxi BR -->
       <article class="card" data-category="publico">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">🚖</div>
-            <span class="category-tag">Mobilidade Urbana</span>
-          </div>
-          <h2>Táxi BR</h2>
-          <p>Solução para gestão do serviço de táxi pelos municípios, promovendo conexão rápida e inteligente entre passageiros e taxistas.</p>
+        <div class="preview-box">
+          <img src="./Táxi BR.png" alt="Preview Táxi BR" loading="lazy">
         </div>
-        <a href="https://taxi-jf-connect.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🚖</div>
+              <span class="category-tag">Mobilidade Urbana</span>
+            </div>
+            <h2>Táxi BR</h2>
+            <p>Solução para gestão do serviço de táxi pelos municípios, promovendo conexão rápida e inteligente entre passageiros e taxistas.</p>
+          </div>
+          <a href="https://taxi-jf-connect.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
 
       <!-- 4. Brachium -->
       <article class="card" data-category="negocios">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">💪</div>
-            <span class="category-tag">Gestão & Saúde</span>
-          </div>
-          <h2>Brachium</h2>
-          <p>Sistema completo para controle de alunos, acompanhamento de treinos e organização das rotinas operacionais de academias.</p>
+        <div class="preview-box">
+          <img src="./Bhachium.png" alt="Preview Brachium" loading="lazy">
         </div>
-        <a href="https://academia.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">💪</div>
+              <span class="category-tag">Gestão & Saúde</span>
+            </div>
+            <h2>Brachium</h2>
+            <p>Sistema completo para controle de alunos, acompanhamento de treinos e organização das rotinas operacionais de academias.</p>
+          </div>
+          <a href="https://academia.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
 
       <!-- 5. Reserva Legal -->
       <article class="card" data-category="agro">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">🌿</div>
-            <span class="category-tag">Ambiental & Agro</span>
-          </div>
-          <h2>Reserva Legal</h2>
-          <p>Conecta proprietários rurais com déficit de matas a detentores de ativos florestais, formando um banco para negociação de compensação de Reserva Legal.</p>
+        <div class="preview-box">
+          <img src="./Reseva Legal.png" alt="Preview Reserva Legal" loading="lazy">
         </div>
-        <a href="https://reserva-legal.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🌿</div>
+              <span class="category-tag">Ambiental & Agro</span>
+            </div>
+            <h2>Reserva Legal</h2>
+            <p>Conecta proprietários rurais com déficit de matas a detentores de ativos florestais, formando um banco para negociação de compensação de Reserva Legal.</p>
+          </div>
+          <a href="https://reserva-legal.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
 
       <!-- 6. Memória Digital -->
       <article class="card" data-category="publico">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">🏛️</div>
-            <span class="category-tag">Gestão Pública</span>
-          </div>
-          <h2>Memória Digital</h2>
-          <p>Preservação, organização e acesso seguro a registros históricos. Ideal para prefeituras e instituições em processo de digitalização e catalogação de acervos públicos.</p>
+        <div class="preview-box">
+          <img src="./Memória Digita.png" alt="Preview Memória Digital" loading="lazy">
         </div>
-        <a href="https://mem-ria-digital.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🏛️</div>
+              <span class="category-tag">Gestão Pública</span>
+            </div>
+            <h2>Memória Digital</h2>
+            <p>Preservação, organização e acesso seguro a registros históricos. Ideal para prefeituras e instituições em processo de digitalização e catalogação de acervos públicos.</p>
+          </div>
+          <a href="https://mem-ria-digital.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
 
       <!-- 7. Radar Gado -->
       <article class="card" data-category="agro">
-        <div>
-          <div class="card-header">
-            <div class="icon-box">🐂</div>
-            <span class="category-tag">Agronegócio</span>
-          </div>
-          <h2>Radar Gado</h2>
-          <p>Plataforma para produtores cadastrarem lotes de animais bovinos à venda, bem como compradores buscarem animais para compra. Busca valores da @ diariamente, o proprietário recebe propostas, a plataforma avalia a melhor oferta (anonimizada) e aconselha sobre a venda.</p>
+        <div class="preview-box">
+          <img src="./Radar Gado.png" alt="Preview Radar Gado" loading="lazy">
         </div>
-        <a href="https://radar-gado.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
-          Acessar Aplicação ↗
-        </a>
+        <div class="card-body">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">🐂</div>
+              <span class="category-tag">Agronegócio</span>
+            </div>
+            <h2>Radar Gado</h2>
+            <p>Plataforma para produtores cadastrarem lotes de animais bovinos à venda, bem como compradores buscarem animais para compra. Busca valores da @ diariamente, o proprietário recebe propostas, a plataforma avalia a melhor oferta (anonimizada) e aconselha sobre a venda.</p>
+          </div>
+          <a href="https://radar-gado.vercel.app" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Acessar Aplicação ↗
+          </a>
+        </div>
       </article>
     </div>
   </main>
